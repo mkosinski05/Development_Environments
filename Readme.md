@@ -1,6 +1,4 @@
-# Development Environments
+# Yocto SDK Development Environment
+The environment is configured to build c code using the Makefile and Yocto SDK. It is assumed that the SDK are already installed in the ``/opt/poky`` folder
 
-The is my Deveopment Environment Templates. 
-
-- Yocto SDK Application Environment
-- RZV2H Translator and Expansion Pack Environment
+### Confiuration
