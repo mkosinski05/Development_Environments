@@ -1,0 +1,19 @@
+{
+	"VARISCITE": {
+		/* Target Device Settings */
+		"TARGET_IP":"192.168.8.123",
+
+		/* Project Settings */
+		"PROGRAM":"hello.bin",
+        "BOARD":"rzv2l",
+		/* Yocto SDK Configuration */
+		"ARCH":"aarch64-poky-linux",
+        "OECORE_NATIVE_SYSROOT":"/opt/poky/${config:VARISCITE.BOARD}/sysroots/x86_64-pokysdk-linux",
+        "SDKTARGETSYSROOT": "/opt/poky/${config:VARISCITE.BOARD}/sysroots/aarch64-poky-linux",
+
+		/* Yocto SDK Constants */
+        "CC_PREFIX": "${config:VARISCITE.OECORE_NATIVE_SYSROOT}/usr/bin/${config:VARISCITE.ARCH}/${config:VARISCITE.ARCH}-",
+		"CXX": "${config:VARISCITE.CC_PREFIX}g++ --sysroot=${config:VARISCITE.SDKTARGETSYSROOT}",
+		"CC": "${config:VARISCITE.CC_PREFIX}gcc --sysroot=${config:VARISCITE.SDKTARGETSYSROOT}",
+	}
+}
