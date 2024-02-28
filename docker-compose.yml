@@ -1,0 +1,19 @@
+version: '3'
+services:
+  Translate:
+    image: v2h/drp-ai:v1.0
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: sleep infinity
+    links:
+      - Extension
+    # ...
+
+  Extension:
+    image: drpai_ext_pt_img:latest
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: sleep infinity
+    # ...

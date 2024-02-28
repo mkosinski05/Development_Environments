@@ -1,0 +1,15 @@
+FROM ubuntu:20.04
+
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y git wget curl unzip \
+    libboost-all-dev libeigen3-dev build-essential python3-pip libgl1-mesa-dev vim
+EXPOSE 4000
+# Copy tools
+RUN mkdir -p /home/drp-ai_work
+WORKDIR /home/drp-ai_work
+ADD tutorials ./tutorials
+ADD how-to ./how-to
+WORKDIR /home/drp-ai_work/tutorials/Translate
+RUN ./DRP-AI_Translator_i8-v1.00-Linux-x86_64-Install
+RUN rm DRP-AI_Translator_i8-v1.00-Linux-x86_64-Install
+ENV PYTHONPATH=/home/drp-ai_work/tutorials/Translate/DRP-AI_Translator_i8/drpAI_Quantizer:${PYTHONPATH}
+WORKDIR /home/drp-ai_work

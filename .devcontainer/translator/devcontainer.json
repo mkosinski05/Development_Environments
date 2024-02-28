@@ -1,0 +1,13 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "RZV2H DRP-AI Translator",
+	"dockerComposeFile": ["../../docker-compose.yml"],
+  	"service": "Translate",
+  	"shutdownAction": "none",
+	"forwardPorts": [4000,4000],
+
+	// Change where the VSCode is mounted in the Container
+	//"workspaceMount": "source=${localWorkspaceFolder}/Translate,target=/home/workspace,type=bind",
+	"workspaceFolder": "/workspace/Translate"
+}
